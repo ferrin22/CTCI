@@ -1,5 +1,5 @@
 #Implement an algorithm to determine if a string has all unique characters
-#Soluton: Hash 0(n)
+#Soluton: Hash O(n)
 def unique(string):
 	table = {}
 	for element in string:
@@ -21,7 +21,7 @@ print unique("11")         #T
 print unique("abcdefghia") #T
 
 #What if you can't use additional data structures?
-#Solution: Sort 0(n log(n))
+#Solution: Sort O(n log(n))
 def unique2(string):
 	ordered = sorted(string) #.sort() only works on lists
 	for i in range(0,len(string) - 1):
