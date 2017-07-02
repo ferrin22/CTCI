@@ -20,3 +20,6 @@ def compressor(string):
 
 
 print compressor("aabcccccaaa")
+print compressor("abcde")
+print compressor("aaAAaaAAAaaa")
+print compressor("abcdeffffffffffffffffffffgh")
