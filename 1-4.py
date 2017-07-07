@@ -1,23 +1,23 @@
 #Replace all spaces in a character array with %20.  Assume sufficient space at the end of
 #the array
-#Solution: Loop until end of string O(n)
+#Solution: Count spaces, Loop backwards, shifting characters as you go. O(n)
 def twenty(charray, n):
-	space = 0
-	for i in range(0,n):
+	spaces = 0
+	for i in range(0, n):
 		if charray[i] == " ":
-			space += 1
-	newlen = n + (space * 2)
+			spaces += 1
+
+	shift = spaces * 2
 	for j in range(n - 1, 0, -1):
 		if charray[j] == " ":
-			charray[newlen - 1] = "0"
-			charray[newlen - 2] = "2"
-			charray[newlen - 3] = "%"
-			newlen -= 3
+			charray[j + shift - 2] = "%"
+			charray[j  + shift - 1] = "2"
+			charray[j + shift] = "0"
+			shift = shift - 2
 		else:
-			charray[newlen - 1] = charray[j]
-			newlen -= 1
-	return charray
+			charray[j + shift] = charray[j]
 
+	return charray
 
 
 print twenty(["M", "r", " ", "J", "o", "h", "n", " ", "S", "m", "i", "t", "h", " ", " ", " ", " "], 13)
