@@ -1,6 +1,6 @@
 #If an element in an MxN matrix is zero, its entire column and row get set to zero
 #Loop to find 0's in matrix, store them.  For corresponding rows, cols, loop to insert 0's
-# O(mn)
+# O(mn) complexity, O(n) space(worst case all 0's)
 def zero(matx, M, N):
 	table = []
 	for x in range(0, M):
